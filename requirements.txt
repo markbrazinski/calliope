@@ -1,0 +1,3 @@
+pillow==11.3.0
+opencv-python-headless==4.14.0.94  # face box refinement (Haar) inside the Nova head box; without it the box is coarse
+boto3==1.42.97                      # Nova (Bedrock) for the face box, eye check and change requests

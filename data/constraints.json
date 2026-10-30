@@ -1,0 +1,71 @@
+{
+ "version": "calliope-constraints@0.1.0",
+ "_note": "Constraint vocabulary. Literal definitions per value; enforcement is tight (unknown or disputed fails).",
+ "attributes": {
+  "heel_height": {
+   "slots": [
+    "shoes"
+   ],
+   "values": {
+    "flat": "sole raised under 1 in, no heel drop",
+    "low_platform": "sole raised evenly under 2 in, heel drop at most 1 in",
+    "heeled": "a heel or wedge with drop over 1 in, or any sole 2 in or more"
+   },
+   "index_field": "heel_height"
+  },
+  "pattern": {
+   "slots": [
+    "top",
+    "bottom",
+    "shoes",
+    "necklace",
+    "dress"
+   ],
+   "values": {
+    "solid": "one colour",
+    "patterned": "print, check, stripe, animal, floral or multi"
+   },
+   "index_field": "pattern"
+  },
+  "gender": {
+   "slots": [
+    "top",
+    "bottom",
+    "shoes",
+    "necklace",
+    "dress"
+   ],
+   "values": {
+    "womens": "",
+    "mens": "",
+    "unisex": ""
+   },
+   "index_field": "gender"
+  },
+  "formality": {
+   "slots": [
+    "bottom",
+    "shoes",
+    "top",
+    "necklace",
+    "dress"
+   ],
+   "values": {
+    "casual": "everyday, lounge or athletic wear (drawstring or elastic lounge waists, sneakers, distressed denim)",
+    "smart": "appropriate for a nice dinner (tailored trousers, clean flats and sandals)",
+    "dressy": "evening or formal"
+   },
+   "index_field": "formality"
+  }
+ },
+ "always": [
+  {
+   "label": "Women's or unisex items",
+   "attribute": "gender",
+   "op": "exclude",
+   "values": [
+    "mens"
+   ]
+  }
+ ]
+}

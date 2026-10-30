@@ -1,0 +1,57 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets/
+
+# Private working docs and generated outputs
+**/docs/
+CALLIOPE-ARCHITECTURE-SOURCE-OF-TRUTH.md
+READINESS.md
+API.md
+architecture/
+tools/fetch_test_photo.py
+outputs/
+artifacts/
+private/
+uploads/
+tmp/
+temp/
+state/
+
+# Dependencies / builds / caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+.next/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.cache/
+.cache-*/
+.npm/
+.playwright-mcp/
+
+# Logs / OS / editors
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Local-only images: photos of people and Livostyle product images (c) Livostyle
+fixtures/demo-subjects/
+fixtures/palette-subjects/
+fixtures/person/
+fixtures/demo-garments/blouse-black-vneck/original.jpg
+licenses/demo-subjects/
+licenses/palette-subjects/
+licenses/person-photo/
+undefined/

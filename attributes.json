@@ -1,0 +1,1132 @@
+{
+ "version": "calliope-attributes@0.2.0",
+ "_note": "Catalog attribute vocabulary (data). Normalized by attributes.py. Owner corrections 2026-10-05: construction/fibre/stretch separate; explicit precedence; vision stays inferred until reviewed; unresolved conflicts are unknown for selection.",
+ "weak_metafield_values": [
+  "",
+  "none",
+  "regular",
+  "regular fit",
+  "n/a"
+ ],
+ "styling_sentence_rx": "\\b(pair(s|ed)?( it)? with|wear (it )?with|style (it )?with|team (it )?with|goes with|tuck(ed)?[- ]in|layer (it )?(over|under)|with (your|a) favou?rite)\\b|\\b(size|sizing) (up|down)\\b|\\bbetween sizes\\b|\\bmodel\\b|\\bbust:? \\d",
+ "categories": {
+  "pants": {
+   "path_rx": "> (Trousers|Cargo Pants|Leggings|Jeans|Activewear Pants > (Sweatpants|Track Pants))$|> Pants$",
+   "groups": [
+    "pants_type",
+    "rise",
+    "leg_cut",
+    "fit_ease",
+    "leg_length",
+    "waist_closure",
+    "fabric_group",
+    "details"
+   ]
+  },
+  "tops": {
+   "path_rx": "> (Clothing Tops|Blouses|Shirts|T-Shirts|Tank Tops|Bodysuits|Tunics|Sweaters)$",
+   "groups": [
+    "top_type",
+    "neckline",
+    "sleeve_length",
+    "sleeve_style",
+    "body_length",
+    "fit_ease",
+    "fabric_group",
+    "front_and_details"
+   ]
+  },
+  "dresses": {
+   "path_rx": "> Dresses$",
+   "groups": [
+    "silhouette",
+    "dress_length",
+    "neckline",
+    "sleeve_length",
+    "waistline",
+    "fit_ease",
+    "fabric_group",
+    "details"
+   ]
+  }
+ },
+ "attributes": {
+  "pants_type": {
+   "categories": [
+    "pants"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "What kind of pants the product is.",
+   "generic": [
+    "trousers"
+   ],
+   "values": {
+    "jeans": "\\bjeans?\\b|\\bdenim (pants|trousers)\\b",
+    "leggings": "\\bleggings?\\b",
+    "joggers": "\\bjoggers?\\b",
+    "sweatpants": "\\bsweat ?pants\\b|\\btrack ?pants\\b",
+    "trousers": "\\btrousers?\\b|\\bslacks\\b|\\bpants\\b",
+    "jeggings": "\\bjeggings?\\b"
+   },
+   "metafields": [],
+   "_jeans_note": "Proposed rule (E1): 'jeans' needs denim/cotton-denim fibre; jean-styled stretch without denim (e.g. 7830696722571, tagged 'skinny jeans', 77% rayon) is 'jeggings'.",
+   "jeans_rule": {
+    "requires_construction": [
+     "denim"
+    ],
+    "else": "jeggings",
+    "note": "'jeans' needs denim construction stated in product text or metafield (not tags only) and, when fibres are known, cotton among them. Jean-styled stretch without that (e.g. 7830696722571: tags 'skinny jeans', 'denim'; 77% rayon) is jeggings."
+   }
+  },
+  "rise": {
+   "categories": [
+    "pants"
+   ],
+   "kind": "single",
+   "order": [
+    "low",
+    "mid",
+    "high"
+   ],
+   "definition": "Where the waistband sits on the body, as the garment is designed (not how it fits a given shopper).",
+   "values": {
+    "low": "\\blow[- ]?(rise|waist(ed)?)\\b",
+    "mid": "\\bmid[- ]?(rise|waist(ed)?)\\b",
+    "high": "\\b(high|super[- ]high|ultra[- ]high)[- ]?(rise|waist(ed)?)\\b"
+   },
+   "metafields": [
+    "mf.fit",
+    "mf.silhouette"
+   ]
+  },
+  "leg_cut": {
+   "categories": [
+    "pants"
+   ],
+   "kind": "single",
+   "order": null,
+   "partial_order": {
+    "name": "leg_width",
+    "ranks": {
+     "skinny": 1,
+     "slim": 2,
+     "straight": 3,
+     "wide_leg": 4
+    },
+    "unranked": [
+     "flare",
+     "bootcut",
+     "tapered",
+     "barrel"
+    ]
+   },
+   "definition": "The designed shape of the leg (garment cut). Says nothing about size or how close it sits on a body.",
+   "values": {
+    "skinny": "\\bskinny\\b",
+    "slim": "\\bslim([- ](leg|fit|cut))?\\b|\\bcigarette\\b",
+    "straight": "\\bstraight([- ](leg|cut))?\\b",
+    "wide_leg": "\\bwide[- ]?leg\\b|\\bpalazzo\\b|\\bwide (pants|trousers)\\b",
+    "flare": "\\bflared?\\b|\\bbell[- ]bottoms?\\b",
+    "bootcut": "\\bboot[- ]?cut\\b",
+    "tapered": "\\btapered\\b|\\bcarrot\\b",
+    "barrel": "\\bbarrel\\b|\\bhorseshoe\\b|\\bballoon[- ]leg\\b"
+   },
+   "metafields": [
+    "mf.silhouette",
+    "mf.fit"
+   ],
+   "derive": [
+    {
+     "if": {
+      "pants_type": "leggings"
+     },
+     "then": "skinny"
+    },
+    {
+     "if": {
+      "pants_type": "joggers"
+     },
+     "then": "tapered"
+    }
+   ],
+   "weak_metafield_values": [
+    "straight",
+    "straight leg"
+   ],
+   "_weak_note": "Post-holdout fix 2026-10-05: metafield 'Straight' on 27 pants; product text agrees 1 time, contradicts 17; it decided 3 holdout items, all wrong (photos wide-leg). Validated on holdout round 2."
+  },
+  "fit_ease": {
+   "categories": [
+    "pants",
+    "tops",
+    "dresses"
+   ],
+   "kind": "single",
+   "order": [
+    "body_skimming",
+    "fitted",
+    "regular",
+    "relaxed",
+    "oversized"
+   ],
+   "definition": "Designed ease: how much room the garment has relative to the body at its labelled size. Distinct from cut and from size.",
+   "values": {
+    "body_skimming": "\\bsecond[- ]skin\\b|\\bskin[- ]?tight\\b|\\bbodycon\\b|\\bcompression\\b",
+    "fitted": "\\bfitted\\b|\\bform[- ]fitting\\b|\\bclose[- ]fitting\\b|\\bsnug\\b|\\bslim[- ]fit(ting)?\\b",
+    "regular": "\\b(regular|classic|standard)[- ]fit\\b",
+    "relaxed": "\\brelaxed\\b|\\bloose(-fitting)?\\b|\\beasy fit\\b|\\bflowy\\b",
+    "oversized": "\\boversized?\\b|\\bbaggy\\b|\\bboyfriend\\b|\\bslouchy\\b"
+   },
+   "metafields": [
+    "mf.fit",
+    "mf.silhouette"
+   ],
+   "derive": [
+    {
+     "if": {
+      "pants_type": "leggings"
+     },
+     "then": "body_skimming"
+    },
+    {
+     "if": {
+      "silhouette": "bodycon"
+     },
+     "then": "body_skimming"
+    }
+   ],
+   "tolerance": 1,
+   "_tolerance_note": "Copy uses adjacent ease words interchangeably ('oversized knit top offers a relaxed fit'); one step apart is stored as a range. No other attribute has tolerance: straight vs wide-leg and midi vs maxi are real distinctions."
+  },
+  "leg_length": {
+   "categories": [
+    "pants"
+   ],
+   "kind": "single",
+   "order": [
+    "cropped",
+    "ankle",
+    "full"
+   ],
+   "definition": "Where the hem falls on a model of average height.",
+   "values": {
+    "cropped": "\\bcropped\\b|\\bcapri\\b|\\b7/8\\b|\\bculottes?\\b",
+    "ankle": "\\bankle([- ]length)?\\b",
+    "full": "\\bfull[- ]?length\\b|\\bfloor[- ]length\\b|\\bextra[- ]long\\b"
+   },
+   "metafields": [
+    "mf.length",
+    "mf.fit"
+   ]
+  },
+  "waist_closure": {
+   "categories": [
+    "pants"
+   ],
+   "kind": "multi",
+   "order": null,
+   "definition": "How the pants fasten at the waist.",
+   "values": {
+    "elastic": "\\belastic(ated)?\\b|\\bpull[- ]on\\b|\\bsmocked waist",
+    "drawstring": "\\bdrawstring\\b",
+    "zip_fly": "\\bzip(per)?[- ]?fly\\b|\\bzip(per)? and button\\b|\\bbutton and zip(per)?\\b|\\bzip(per)? closure\\b",
+    "button": "\\bbutton[- ]?(fly|closure|front|waist)\\b",
+    "side_zip": "\\b(side|back)[- ]zip(per)?\\b",
+    "tie_waist": "\\btie[- ]waist\\b|\\bself[- ]tie\\b|\\bbelted\\b",
+    "paperbag": "\\bpaper ?bag\\b"
+   },
+   "metafields": [
+    "mf.closure"
+   ]
+  },
+  "top_type": {
+   "categories": [
+    "tops"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "What kind of top the product is.",
+   "generic": [
+    "top"
+   ],
+   "values": {
+    "blouse": "\\bblouses?\\b",
+    "shirt": "\\bbutton[- ](up|down) shirt\\b|\\b(?<!t-)(?<!t )shirts?\\b",
+    "tee": "\\bt-?shirts?\\b|\\btees?\\b",
+    "tank": "\\btank\\b|\\bcami(sole)?\\b",
+    "bodysuit": "\\bbodysuit\\b",
+    "tunic": "\\btunic\\b",
+    "top": "\\btops?\\b|\\bknit top\\b",
+    "sweater": "\\bsweaters?\\b|\\bpullover\\b|\\bjumper\\b"
+   },
+   "metafields": []
+  },
+  "neckline": {
+   "categories": [
+    "tops",
+    "dresses"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "The shape of the neck opening. Nominal: there is no 'more' or 'less' neckline.",
+   "compatible": [
+    [
+     "v_neck",
+     "collared"
+    ],
+    [
+     "v_neck",
+     "tie_neck"
+    ],
+    [
+     "crew",
+     "keyhole"
+    ],
+    [
+     "crew",
+     "henley"
+    ],
+    [
+     "v_neck",
+     "wrap"
+    ],
+    [
+     "square",
+     "sweetheart"
+    ]
+   ],
+   "values": {
+    "v_neck": "\\bv[- ]?neck(line)?\\b|\\bsurplice\\b|\\bplunge\\b|\\bdeep v\\b",
+    "crew": "\\bcrew[- ]?neck\\b|\\bround[- ]neck(line)?\\b",
+    "scoop": "\\bscoop[- ]?neck\\b|\\bscoop\\b",
+    "square": "\\bsquare[- ]neck(line)?\\b",
+    "boat": "\\bboat[- ]?neck\\b|\\bbateau\\b|\\bslash neck\\b",
+    "cowl": "\\bcowl\\b",
+    "halter": "\\bhalter\\b",
+    "off_shoulder": "\\boff[- ](the[- ])?shoulder\\b|\\bbardot\\b",
+    "one_shoulder": "\\bone[- ]shoulder\\b",
+    "sweetheart": "\\bsweetheart\\b",
+    "collared": "\\bcollar(ed)?\\b|\\blapel\\b|\\bpolo\\b",
+    "mock_turtle": "\\bmock[- ]?neck\\b|\\bturtle[- ]?neck\\b|\\bfunnel[- ]neck\\b",
+    "henley": "\\bhenley\\b",
+    "keyhole": "\\bkeyhole\\b",
+    "high_neck": "\\bhigh[- ]neck\\b",
+    "tie_neck": "\\btie[- ]neck\\b|\\bbow[- ]neck\\b|\\bpussy[- ]?bow\\b",
+    "split_neck": "\\bsplit[- ]neck\\b|\\bnotch(ed)?[- ]neck\\b",
+    "wrap": "\\bwrap[- ]front\\b|\\bcrossover\\b"
+   },
+   "metafields": [
+    "mf.silhouette"
+   ],
+   "request_hints": {
+    "lower|deeper|more open|plunging|lower[- ]cut": {
+     "label": "a more open neckline",
+     "options": [
+      "v_neck",
+      "scoop",
+      "square",
+      "sweetheart"
+     ]
+    },
+    "higher|more coverage|less (low|revealing)|closed": {
+     "label": "a higher neckline",
+     "options": [
+      "crew",
+      "high_neck",
+      "mock_turtle",
+      "collared"
+     ]
+    }
+   },
+   "_hints_note": "Depth is not representable. Hints only suggest absolute styles to offer in a clarification; they are not an ordering."
+  },
+  "sleeve_length": {
+   "categories": [
+    "tops",
+    "dresses"
+   ],
+   "kind": "single",
+   "order": [
+    "sleeveless",
+    "cap",
+    "short",
+    "elbow",
+    "three_quarter",
+    "long"
+   ],
+   "definition": "How far the sleeve reaches down the arm.",
+   "values": {
+    "sleeveless": "\\bsleeveless\\b|\\bstrapless\\b|\\bspaghetti[- ]straps?\\b|\\btank\\b|\\bcami(sole)?\\b|\\bhalter\\b|\\btube\\b",
+    "cap": "\\bcap[- ]sleeves?\\b",
+    "short": "\\bshort[- ]((puff(ed)?|flutter|ruffled?|bell|balloon|lantern|bubble|bishop|dolman|batwing|raglan|drop[- ]shoulder)[- ])?sleeves?\\b|\\bshort[- ]sleeved\\b",
+    "elbow": "\\belbow[- ](length[- ])?sleeves?\\b|\\bhalf[- ]sleeves?\\b",
+    "three_quarter": "\\b3/4\\b|\\bthree[- ]quarter\\b",
+    "long": "\\blong[- ]((puff(ed)?|flutter|ruffled?|bell|balloon|lantern|bubble|bishop|dolman|batwing|raglan|drop[- ]shoulder)[- ])?sleeves?\\b|\\blong[- ]sleeved\\b"
+   },
+   "metafields": []
+  },
+  "sleeve_style": {
+   "categories": [
+    "tops",
+    "dresses"
+   ],
+   "kind": "multi",
+   "order": null,
+   "definition": "Sleeve shape and construction. Independent of sleeve length.",
+   "values": {
+    "puff": "\\bpuff(ed)?[- ]?sleeves?\\b|\\bpuff\\b",
+    "bell": "\\bbell[- ]sleeves?\\b",
+    "balloon": "\\bballoon[- ]sleeves?\\b|\\blantern[- ]sleeves?\\b",
+    "flutter": "\\bflutter\\b",
+    "ruffle": "\\bruffled?[- ]sleeves?\\b",
+    "bishop": "\\bbishop\\b",
+    "raglan": "\\braglan\\b",
+    "drop_shoulder": "\\bdrop(ped)?[- ]shoulder\\b",
+    "cold_shoulder": "\\bcold[- ]shoulder\\b",
+    "dolman": "\\bdolman\\b|\\bbatwing\\b",
+    "kimono": "\\bkimono\\b"
+   },
+   "metafields": []
+  },
+  "body_length": {
+   "categories": [
+    "tops"
+   ],
+   "kind": "single",
+   "order": [
+    "cropped",
+    "waist",
+    "hip",
+    "tunic"
+   ],
+   "definition": "Where the top's hem falls. Drives the tuck rule.",
+   "values": {
+    "cropped": "\\bcrop(ped)?\\b",
+    "waist": "\\bwaist[- ]length\\b",
+    "hip": "\\bhip[- ]length\\b",
+    "tunic": "\\btunic\\b|\\blong[- ]?line\\b"
+   },
+   "metafields": [
+    "mf.length",
+    "mf.fit"
+   ]
+  },
+  "front_and_details": {
+   "categories": [
+    "tops"
+   ],
+   "kind": "multi",
+   "order": null,
+   "definition": "How the front opens, plus construction details.",
+   "values": {
+    "button_front": "\\bbutton[- ](up|down|front)\\b|\\bbuttoned\\b",
+    "wrap": "\\bwrap\\b",
+    "tie_front": "\\btie[- ]front\\b|\\bknot(ted)?[- ]front\\b",
+    "zip": "\\b(half|quarter|front)[- ]zip\\b",
+    "ruffle": "\\bruffled?\\b",
+    "peplum": "\\bpeplum\\b",
+    "smocked": "\\bsmock(ed|ing)\\b",
+    "lace": "\\blace\\b",
+    "cutout": "\\bcut[- ]?out\\b",
+    "pleated": "\\bpleat(ed|s)?\\b",
+    "ruched": "\\bruch(ed|ing)\\b",
+    "sheer": "\\bsheer\\b|\\bmesh\\b"
+   },
+   "metafields": [
+    "mf.closure"
+   ]
+  },
+  "silhouette": {
+   "categories": [
+    "dresses"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "The designed overall shape of the dress (garment cut). Nominal.",
+   "values": {
+    "a_line": "\\ba[- ]line\\b|\\bskater\\b",
+    "fit_and_flare": "\\bfit[- ](and|&)[- ]flare\\b",
+    "sheath": "\\bsheath\\b|\\bpencil\\b",
+    "bodycon": "\\bbodycon\\b|\\bbody[- ]con\\b",
+    "shift": "\\bshift\\b|\\bt-?shirt dress\\b|\\btee dress\\b",
+    "slip": "\\bslip dress\\b|\\bslip\\b",
+    "wrap": "\\bwrap\\b",
+    "shirt": "(?<!t-)(?<!t )\\bshirt ?dress\\b",
+    "babydoll": "\\bbabydoll\\b|\\bswing\\b|\\btrapeze\\b",
+    "mermaid": "\\bmermaid\\b|\\btrumpet\\b"
+   },
+   "metafields": [
+    "mf.silhouette",
+    "mf.fit"
+   ],
+   "weak_metafield_values": [
+    "a-line"
+   ],
+   "_weak_note": "Dev review 2026-10-05: metafield-only 'A-Line' was wrong 2 of 2 times, and 12 dresses titled Bodycon carry A-Line metafields. Treated as a default, not information."
+  },
+  "dress_length": {
+   "categories": [
+    "dresses"
+   ],
+   "kind": "single",
+   "order": [
+    "mini",
+    "knee",
+    "midi",
+    "maxi"
+   ],
+   "definition": "Where the hem falls on a model of average height.",
+   "values": {
+    "mini": "\\bmini\\b",
+    "knee": "\\bknee[- ]length\\b",
+    "midi": "\\bmidi\\b|\\btea[- ]length\\b|\\bmid[- ]calf\\b",
+    "maxi": "\\bmaxi\\b|\\bfloor[- ]length\\b|\\bgown\\b"
+   },
+   "metafields": [
+    "mf.length"
+   ],
+   "metafield_map": {
+    "short": "mini",
+    "knee-length": "knee"
+   }
+  },
+  "waistline": {
+   "categories": [
+    "dresses"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "Where the dress defines the waist, if anywhere.",
+   "values": {
+    "empire": "\\bempire\\b",
+    "natural": "\\b(natural|defined|cinched|fitted) waist\\b",
+    "drop": "\\bdrop(ped)?[- ]waist\\b",
+    "belted": "\\bbelt(ed)?\\b|\\btie[- ]waist\\b|\\bsash\\b"
+   },
+   "metafields": []
+  },
+  "details": {
+   "categories": [
+    "pants",
+    "dresses"
+   ],
+   "kind": "multi",
+   "order": null,
+   "definition": "Construction details a shopper can ask for or avoid.",
+   "values": {
+    "pleats": "\\bpleat(ed|s)?\\b",
+    "cargo_pockets": "\\bcargo\\b",
+    "patch_pockets": "\\bpatch pockets?\\b",
+    "slit": "\\bslit\\b",
+    "distressed": "\\bdistressed\\b|\\bripped\\b",
+    "cutout": "\\bcut[- ]?out\\b",
+    "ruffle": "\\bruffled?\\b",
+    "tiered": "\\btiered\\b",
+    "smocked": "\\bsmock(ed|ing)\\b",
+    "ruched": "\\bruch(ed|ing)\\b",
+    "lace": "\\blace\\b",
+    "open_back": "\\bopen[- ]back\\b|\\bbackless\\b",
+    "side_stripe": "\\bside[- ]stripe\\b"
+   },
+   "metafields": []
+  },
+  "construction": {
+   "categories": [
+    "pants",
+    "tops",
+    "dresses"
+   ],
+   "kind": "single",
+   "order": null,
+   "definition": "How the fabric is made (weave or knit family). Not fibre content, not stretch.",
+   "values": {
+    "denim": "\\bdenim\\b|\\bjeans?\\b",
+    "twill": "\\btwill\\b",
+    "satin": "\\bsatin\\b|\\bsilky\\b",
+    "chiffon": "\\bchiffon\\b",
+    "crepe": "\\bcrepe\\b",
+    "knit": "\\b(rib(bed)?[- ]?)?knit\\b|\\bsweater\\b",
+    "jersey": "\\bjersey\\b",
+    "corduroy": "\\bcorduroy\\b",
+    "faux_leather": "\\b(faux|pu|vegan)[- ]leather\\b|\\bleather\\b",
+    "velvet": "\\bvelvet\\b",
+    "poplin": "\\bpoplin\\b",
+    "terry_fleece": "\\bterry\\b|\\bfleece\\b",
+    "sequin": "\\bsequin(ed|s)?\\b",
+    "lace": "\\blace fabric\\b|\\ball[- ]over lace\\b",
+    "mesh": "\\bmesh\\b"
+   },
+   "metafields": [
+    "mf.fabric"
+   ],
+   "compatible": [
+    [
+     "knit",
+     "jersey"
+    ],
+    [
+     "knit",
+     "terry_fleece"
+    ],
+    [
+     "jersey",
+     "terry_fleece"
+    ],
+    [
+     "knit",
+     "sequin"
+    ],
+    [
+     "mesh",
+     "sequin"
+    ]
+   ]
+  },
+  "stretch": {
+   "categories": [
+    "pants",
+    "tops",
+    "dresses"
+   ],
+   "kind": "single",
+   "order": [
+    "none",
+    "slight",
+    "moderate",
+    "high"
+   ],
+   "definition": "Stretch as STATED in product text. Never derived from elastane/spandex percentage (that is recorded as evidence only).",
+   "values": {
+    "none": "\\bnon[- ]?stretch(y)?\\b|\\bno stretch\\b|\\bnot stretchy\\b|\\bstretch: ?none\\b",
+    "slight": "\\bslight(ly)?[- ]stretch(y)?\\b|\\bstretch: ?slight(ly stretchy)?\\b|\\blight stretch\\b",
+    "moderate": "\\bmoderate[- ]stretch\\b|\\bmedium stretch\\b|\\bstretch: ?moderate\\b",
+    "high": "\\bhigh(ly)?[- ]stretch(y)?\\b|\\bhyper[- ]?stretch\\b|\\bsuper[- ]stretch(y)?\\b|\\bfour[- ]way stretch\\b|\\b4[- ]way stretch\\b|\\bvery stretchy\\b|\\bstretch: ?high(ly stretchy)?\\b"
+   },
+   "metafields": []
+  }
+ },
+ "fibers": {
+  "cotton": "\\bcotton\\b",
+  "polyester": "\\bpolyester\\b",
+  "spandex": "\\bspandex\\b|\\belastane\\b|\\blycra\\b",
+  "rayon_viscose": "\\brayon\\b|\\bviscose\\b",
+  "linen": "\\blinen\\b",
+  "nylon": "\\bnylon\\b|\\bpolyamide\\b",
+  "acrylic": "\\bacrylic\\b",
+  "wool": "\\bwool\\b",
+  "silk": "\\bsilk\\b(?!y)",
+  "modal": "\\bmodal\\b",
+  "lyocell": "\\blyocell\\b|\\btencel\\b"
+ },
+ "groups": {
+  "fabric_group": [
+   "construction",
+   "fiber_composition",
+   "stretch"
+  ]
+ },
+ "precedence": [
+  {
+   "tier": "reliable",
+   "sources": [
+    "title",
+    "supplier_title",
+    "supplier_description"
+   ],
+   "status": "explicit",
+   "why": "Product and supplier statements about this product"
+  },
+  {
+   "tier": "site_copy",
+   "sources": [
+    "description"
+   ],
+   "status": "explicit",
+   "why": "Rewritten site copy; below supplier text because rewrites invent specs (fibre evidence 2026-10-05)"
+  },
+  {
+   "tier": "category",
+   "sources": [
+    "category"
+   ],
+   "status": "explicit",
+   "why": "Merchant's coarse taxonomy leaf (e.g. 'Sweatpants' for joggers); below product text so it never ties with the title"
+  },
+  {
+   "tier": "reviewed",
+   "sources": [
+    "review"
+   ],
+   "status": "reviewed",
+   "why": "Independent human review (not yet populated)"
+  },
+  {
+   "tier": "derived",
+   "sources": [
+    "derived"
+   ],
+   "status": "inferred",
+   "why": "Rule from another resolved attribute (leggings -> skinny)"
+  },
+  {
+   "tier": "vision",
+   "sources": [
+    "vision"
+   ],
+   "status": "inferred",
+   "why": "Model reading of the product photo; stays inferred until reviewed"
+  },
+  {
+   "tier": "metafield",
+   "sources": [
+    "mf.fit",
+    "mf.silhouette",
+    "mf.length",
+    "mf.style",
+    "mf.closure",
+    "mf.material",
+    "mf.fabric",
+    "mf.pattern"
+   ],
+   "status": "inferred",
+   "why": "Standardized, partly model-enriched dataset fields"
+  },
+  {
+   "tier": "tags",
+   "sources": [
+    "tags"
+   ],
+   "status": "inferred",
+   "why": "SEO and collection labels"
+  }
+ ],
+ "precedence_rule": "The highest tier with any value decides. A lower tier that disagrees is kept as 'overridden' evidence. If the deciding tier disagrees with itself, the attribute is 'unresolved' and unknown for selection; lower tiers never break that tie.",
+ "selectable_statuses": [
+  "explicit",
+  "reviewed",
+  "inferred"
+ ],
+ "integrated": [
+  "rise",
+  "leg_cut",
+  "neckline",
+  "sleeve_length"
+ ],
+ "shared": {
+  "pattern": {
+   "patterned": "\\b(floral|plaid|gingham|striped?|stripes|leopard|zebra|animal print|polka|print(ed)?|tie[- ]dye|camo(uflage)?|paisley|geometric|graphic|check(ed)?|houndstooth)\\b",
+   "solid": "\\bsolid\\b"
+  },
+  "formality_from_style": {
+   "casual": "\\bcasual\\b|\\bathleisure\\b|\\bstreetwear\\b|\\bloungewear\\b",
+   "smart": "\\bclassic\\b|\\bchic\\b|\\belegant\\b|\\bwork\\b|\\boffice\\b",
+   "dressy": "\\bcocktail\\b|\\bevening\\b|\\bparty\\b|\\bformal\\b|\\bwedding\\b|\\bgala\\b"
+  }
+ },
+ "tuning_log": [
+  {
+   "date": "2026-10-05",
+   "set": "dev (30 items from the proposal sample)",
+   "changes": [
+    "sleeve_length: allow one sleeve-style word ('short puff sleeve')",
+    "silhouette: metafield 'A-Line' is weak"
+   ]
+  },
+  {
+   "date": "2026-10-05",
+   "set": "after holdout round 1 (round 1 metrics frozen before this change)",
+   "changes": [
+    "leg_cut: metafield 'Straight' is weak"
+   ]
+  },
+  {
+   "date": "2026-10-05",
+   "set": "post-holdout, outside holdout fields",
+   "changes": [
+    "category leaf moved to its own tier below product text (6 joggers were unresolved against category 'Sweatpants')"
+   ]
+  },
+  "2026-10-13: request rules for bootcut, tapered, barrel and slim leg (vocabulary values that had no request words, so 'bootcut' was dropped silently)"
+ ],
+ "requests": {
+  "_note": "Rules fallback for attribute-level change requests (used when the model is unavailable, and to cross-check it). First match per attribute wins; order matters.",
+  "slot_of": {
+   "rise": "bottom",
+   "leg_cut": "bottom",
+   "neckline": "top",
+   "sleeve_length": "top",
+   "pants_type": "bottom",
+   "lightness": "bottom",
+   "dress_length": "dress",
+   "silhouette": "dress",
+   "color": "bottom"
+  },
+  "rules": [
+   {
+    "rx": "\\bdarker\\b",
+    "attribute": "lightness",
+    "op": "lt",
+    "slot_from_words": true
+   },
+   {
+    "rx": "\\blighter\\b",
+    "attribute": "lightness",
+    "op": "gt",
+    "slot_from_words": true
+   },
+   {
+    "rx": "\\bjeans\\b|\\bdenim\\b",
+    "attribute": "pants_type",
+    "op": "eq",
+    "value": "jeans"
+   },
+   {
+    "rx": "\\blower[- ]?(rise|waist(ed)?)\\b|\\bsits? lower\\b|\\bless high[- ]waisted\\b",
+    "attribute": "rise",
+    "op": "lt"
+   },
+   {
+    "rx": "\\bhigher[- ]?(rise|waist(ed)?)\\b|\\bsits? higher\\b",
+    "attribute": "rise",
+    "op": "gt"
+   },
+   {
+    "rx": "\\blow[- ]?rise\\b|\\blow[- ]waist(ed)?\\b",
+    "attribute": "rise",
+    "op": "eq",
+    "value": "low"
+   },
+   {
+    "rx": "\\bmid[- ]?rise\\b",
+    "attribute": "rise",
+    "op": "eq",
+    "value": "mid"
+   },
+   {
+    "rx": "\\bhigh[- ]?rise\\b|\\bhigh[- ]waist(ed)?\\b",
+    "attribute": "rise",
+    "op": "eq",
+    "value": "high"
+   },
+   {
+    "rx": "\\b(slimmer|narrower|skinnier)\\b",
+    "attribute": "leg_cut",
+    "op": "lt"
+   },
+   {
+    "rx": "\\bwider\\b",
+    "attribute": "leg_cut",
+    "op": "gt"
+   },
+   {
+    "rx": "\\b(tighter|more fitted|snugger|closer[- ]fitting)\\b",
+    "clarify": "cut_or_size",
+    "direction": "smaller"
+   },
+   {
+    "rx": "\\b(looser|baggier|roomier)\\b",
+    "clarify": "cut_or_size",
+    "direction": "bigger"
+   },
+   {
+    "rx": "\\bwide[- ]?leg\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "wide_leg"
+   },
+   {
+    "rx": "\\bstraight[- ]?leg\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "straight"
+   },
+   {
+    "rx": "\\bskinny\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "skinny"
+   },
+   {
+    "rx": "\\bflared?\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "flare"
+   },
+   {
+    "rx": "\\bboot[- ]?cut\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "bootcut"
+   },
+   {
+    "rx": "\\btapered\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "tapered"
+   },
+   {
+    "rx": "\\bbarrel\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "barrel"
+   },
+   {
+    "rx": "\\bslim[- ](leg|fit|cut)\\b",
+    "attribute": "leg_cut",
+    "op": "eq",
+    "value": "slim"
+   },
+   {
+    "rx": "\\b(lower|deeper|plunging|more open|lower[- ]cut)\\b[^.]{0,15}\\bneck(line)?\\b|\\bneck(line)?\\b[^.]{0,15}\\b(lower|deeper)\\b",
+    "clarify": "which_value",
+    "attribute": "neckline",
+    "hint": "lower|deeper|more open|plunging|lower[- ]cut"
+   },
+   {
+    "rx": "\\b(higher|more modest|more coverage)\\b[^.]{0,15}\\bneck(line)?\\b",
+    "clarify": "which_value",
+    "attribute": "neckline",
+    "hint": "higher|more coverage|less (low|revealing)|closed"
+   },
+   {
+    "rx": "\\b(different|another|new|other)\\b[^.]{0,10}\\bneck(line)?\\b",
+    "attribute": "neckline",
+    "op": "neq"
+   },
+   {
+    "rx": "\\bv[- ]?neck\\b",
+    "attribute": "neckline",
+    "op": "eq",
+    "value": "v_neck"
+   },
+   {
+    "rx": "\\bscoop\\b",
+    "attribute": "neckline",
+    "op": "eq",
+    "value": "scoop"
+   },
+   {
+    "rx": "\\bsquare[- ]neck\\b",
+    "attribute": "neckline",
+    "op": "eq",
+    "value": "square"
+   },
+   {
+    "rx": "\\bcrew[- ]?neck\\b|\\bround[- ]neck\\b",
+    "attribute": "neckline",
+    "op": "eq",
+    "value": "crew"
+   },
+   {
+    "rx": "\\blonger sleeves?\\b|\\bmore sleeve\\b",
+    "attribute": "sleeve_length",
+    "op": "gt"
+   },
+   {
+    "rx": "\\bshorter sleeves?\\b|\\bless sleeve\\b",
+    "attribute": "sleeve_length",
+    "op": "lt"
+   },
+   {
+    "rx": "\\blong[- ]sleeved?\\b|\\blong sleeves\\b",
+    "attribute": "sleeve_length",
+    "op": "eq",
+    "value": "long"
+   },
+   {
+    "rx": "\\bshort[- ]sleeved?\\b|\\bshort sleeves\\b",
+    "attribute": "sleeve_length",
+    "op": "eq",
+    "value": "short"
+   },
+   {
+    "rx": "\\bsleeveless\\b",
+    "attribute": "sleeve_length",
+    "op": "eq",
+    "value": "sleeveless"
+   },
+   {
+    "rx": "\\blonger\\b(?![^.]{0,14}\\bsleeve)",
+    "attribute": "dress_length",
+    "op": "gt"
+   },
+   {
+    "rx": "\\bshorter\\b(?![^.]{0,14}\\bsleeve)",
+    "attribute": "dress_length",
+    "op": "lt"
+   },
+   {
+    "rx": "\\bmaxi\\b",
+    "attribute": "dress_length",
+    "op": "eq",
+    "value": "maxi"
+   },
+   {
+    "rx": "\\bmidi\\b",
+    "attribute": "dress_length",
+    "op": "eq",
+    "value": "midi"
+   },
+   {
+    "rx": "\\bmini\\b",
+    "attribute": "dress_length",
+    "op": "eq",
+    "value": "mini"
+   },
+   {
+    "rx": "\\bknee[- ]length\\b",
+    "attribute": "dress_length",
+    "op": "eq",
+    "value": "knee"
+   },
+   {
+    "rx": "\\ba[- ]line\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "a_line"
+   },
+   {
+    "rx": "\\bfit[- ]and[- ]flare\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "fit_and_flare"
+   },
+   {
+    "rx": "\\bwrap\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "wrap"
+   },
+   {
+    "rx": "\\bbodycon\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "bodycon"
+   },
+   {
+    "rx": "\\bshift\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "shift"
+   },
+   {
+    "rx": "\\bsheath\\b",
+    "attribute": "silhouette",
+    "op": "eq",
+    "value": "sheath"
+   },
+   {
+    "rx": "\\b(?:in\\s+)?(black|white|grey|navy|blue|red|pink|purple|green|olive|brown|beige|cream|burgundy|orange|yellow|gray|charcoal|ivory|tan|camel|khaki|maroon|wine|fuchsia|rose|violet|lavender)\\b(?!\\s*(?:-|to)\\s*(?:black|white|grey|navy|blue|red|pink|purple|green|olive|brown|beige|cream|burgundy|orange|yellow))",
+    "attribute": "color",
+    "op": "eq",
+    "value_from_match": true,
+    "slot_from_words": true
+   }
+  ],
+  "top_words": "\\b(top|blouse|shirt|sweater|tee)\\b",
+  "labels": {
+   "v_neck": "V-neck",
+   "scoop": "Scoop neck",
+   "square": "Square neck",
+   "sweetheart": "Sweetheart",
+   "crew": "Crew neck",
+   "high_neck": "High neck",
+   "mock_turtle": "Mock neck",
+   "collared": "Collared",
+   "low": "Low-rise",
+   "mid": "Mid-rise",
+   "high": "High-rise",
+   "jeans": "Jeans",
+   "a_line": "A-line",
+   "fit_and_flare": "Fit-and-flare",
+   "maxi": "Maxi",
+   "midi": "Midi",
+   "mini": "Mini",
+   "knee": "Knee-length"
+  },
+  "edge": {
+   "sleeve_length:gt": "Your {piece} already has long sleeves, so I can't go longer.",
+   "sleeve_length:lt": "Your {piece} is already sleeveless, so I can't go shorter.",
+   "rise:lt": "These are already low-rise, the lowest rise I can search for.",
+   "rise:gt": "These are already high-rise, the highest rise I can search for.",
+   "leg_cut:lt": "These are already skinny, the slimmest leg I can search for.",
+   "leg_cut:gt": "These are already wide-leg, the widest leg I can search for.",
+   "dress_length:gt": "This dress is already maxi length, the longest I can search for.",
+   "dress_length:lt": "This dress is already mini length, the shortest I can search for."
+  },
+  "slot_words": {
+   "shoes": "\\b(shoes?|sandals?|flats?|loafers?)\\b",
+   "top": "\\b(top|blouse|shirt)\\b",
+   "necklace": "\\bnecklace\\b",
+   "dress": "\\bdress\\b",
+   "bottom": "\\b(trousers|pants|jeans|leggings)\\b"
+  }
+ },
+ "request_attributes": [
+  "rise",
+  "leg_cut",
+  "neckline",
+  "sleeve_length",
+  "pants_type",
+  "lightness",
+  "dress_length",
+  "silhouette",
+  "color"
+ ],
+ "_request_attributes_note": "Selection filters on these when requested. pants_type is request-only (eq), so 'jeans' is checked and reported, never silently dropped.",
+ "strict_excluded_bases": [
+  "tags"
+ ],
+ "_strict_note": "Owner correction 2026-10-05: values decided by tags alone caused holdout errors, so they never establish a strict match, anchor or offered option. They stay in the record as evidence.",
+ "computed_request_attributes": {
+  "lightness": {
+   "source": "catalog colour (measured hex of the pictured colour) -> OKLab L",
+   "step": 0.08,
+   "ops": [
+    "lt",
+    "gt"
+   ],
+   "note": "darker = at least 0.08 lower OKLab L than the current piece, in the same colour family unless the shopper names a colour (engine.same_family: neutrals by chroma, coloured pieces within 30 degrees of hue). Unknown colour never matches."
+  },
+  "color": {
+   "source": "merchant colour name, else the measured catalog colour (engine.color_named)",
+   "ops": [
+    "eq"
+   ],
+   "values": [
+    "black",
+    "white",
+    "grey",
+    "navy",
+    "blue",
+    "red",
+    "pink",
+    "purple",
+    "green",
+    "olive",
+    "brown",
+    "beige",
+    "cream",
+    "burgundy",
+    "orange",
+    "yellow"
+   ],
+   "note": "only when the shopper names a colour; it replaces the darker/lighter colour-family rule for that piece. Unknown colour never matches.",
+   "aliases": {
+    "gray": "grey",
+    "charcoal": "grey",
+    "ivory": "cream",
+    "tan": "beige",
+    "camel": "beige",
+    "khaki": "beige",
+    "maroon": "burgundy",
+    "wine": "burgundy",
+    "fuchsia": "pink",
+    "rose": "pink",
+    "violet": "purple",
+    "lavender": "purple"
+   }
+  }
+ }
+}

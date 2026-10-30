@@ -1,0 +1,2082 @@
+{
+ "catalog_version": "calliope-palettes@0.1.0",
+ "color_space": "OKLCH (L 0-1, C, h degrees), sRGB D65 display hex; chroma reduced to fit sRGB where needed",
+ "provenance": {
+  "source": "calliope-authored",
+  "author": "Claude (coding agent) for Calliope, 2026-09-30; not authored or reviewed by Mark yet",
+  "method": "Hand-written OKLCH values from public seasonal concepts (value, chroma, relative temperature). Temperature is relative within each color family: warm palettes include teal/turquoise blues, cool palettes include raspberry/blue reds.",
+  "not_copied_from": [
+   "Sci\\ART / PrismXII",
+   "12 Blueprints",
+   "NDU Colors",
+   "House of Colour",
+   "Colour Me Beautiful",
+   "Pantone",
+   "blog hex tables"
+  ],
+  "validated_against_fabric": false,
+  "stylistic_assumptions": "Each palette has 4 neutrals (one light, one or two mid, one dark or deepest-allowed), mid colors, and 2-3 'explore' colors. Light palettes cap their darkest color near L 0.48; Dark palettes keep one cream for contrast. These are styling judgements by the agent, not established science."
+ },
+ "aliases": {
+  "true_spring": [
+   "Warm Spring"
+  ],
+  "true_summer": [
+   "Cool Summer"
+  ],
+  "true_autumn": [
+   "Warm Autumn"
+  ],
+  "true_winter": [
+   "Cool Winter"
+  ],
+  "dark_autumn": [
+   "Deep Autumn"
+  ],
+  "dark_winter": [
+   "Deep Winter"
+  ],
+  "bright_spring": [
+   "Clear Spring"
+  ],
+  "bright_winter": [
+   "Clear Winter"
+  ]
+ },
+ "palettes": [
+  {
+   "id": "light_spring",
+   "name": "Light Spring",
+   "description": "Light, warm-leaning, fresh; no heavy darks.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "light_spring.ivory",
+     "name": "ivory",
+     "hex": "#f7f2df",
+     "oklch": [
+      0.96,
+      0.025,
+      95
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.light_camel",
+     "name": "light camel",
+     "hex": "#d5b898",
+     "oklch": [
+      0.8,
+      0.055,
+      70
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.warm_stone",
+     "name": "warm stone",
+     "hex": "#aca397",
+     "oklch": [
+      0.72,
+      0.02,
+      75
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_spring.soft_warm_navy",
+     "name": "soft warm navy",
+     "hex": "#3e6084",
+     "oklch": [
+      0.48,
+      0.07,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_spring.peach",
+     "name": "peach",
+     "hex": "#f6b294",
+     "oklch": [
+      0.82,
+      0.09,
+      45
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.light_coral",
+     "name": "light coral",
+     "hex": "#ed8d7d",
+     "oklch": [
+      0.74,
+      0.12,
+      30
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "light_spring.buttercup",
+     "name": "buttercup",
+     "hex": "#f5de87",
+     "oklch": [
+      0.9,
+      0.11,
+      95
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.light_aqua",
+     "name": "light aqua",
+     "hex": "#8adbdb",
+     "oklch": [
+      0.84,
+      0.08,
+      195
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.clear_sky_blue",
+     "name": "clear sky blue",
+     "hex": "#76bbe2",
+     "oklch": [
+      0.76,
+      0.09,
+      235
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "light_spring.spring_green",
+     "name": "spring green",
+     "hex": "#a8d391",
+     "oklch": [
+      0.82,
+      0.1,
+      135
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_spring.soft_violet",
+     "name": "soft violet",
+     "hex": "#ac9ad0",
+     "oklch": [
+      0.72,
+      0.08,
+      300
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_spring.poppy",
+     "name": "poppy",
+     "hex": "#e36650",
+     "oklch": [
+      0.66,
+      0.16,
+      32
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "true_spring",
+   "name": "True Spring",
+   "description": "Warm, clear, medium-light; golden rather than dusty.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "true_spring.warm_ivory",
+     "name": "warm ivory",
+     "hex": "#f6eed8",
+     "oklch": [
+      0.95,
+      0.03,
+      90
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "true_spring.camel",
+     "name": "camel",
+     "hex": "#c59c6d",
+     "oklch": [
+      0.72,
+      0.08,
+      70
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.milk_chocolate",
+     "name": "milk chocolate",
+     "hex": "#6c4932",
+     "oklch": [
+      0.44,
+      0.06,
+      55
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_spring.marine_navy",
+     "name": "marine navy",
+     "hex": "#224a71",
+     "oklch": [
+      0.4,
+      0.08,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_spring.coral",
+     "name": "coral",
+     "hex": "#ec785b",
+     "oklch": [
+      0.7,
+      0.15,
+      35
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.golden_yellow",
+     "name": "golden yellow",
+     "hex": "#f0c543",
+     "oklch": [
+      0.84,
+      0.15,
+      90
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "true_spring.grass_green",
+     "name": "grass green",
+     "hex": "#6aad3e",
+     "oklch": [
+      0.68,
+      0.16,
+      135
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.turquoise",
+     "name": "turquoise",
+     "hex": "#14bbc2",
+     "oklch": [
+      0.72,
+      0.12,
+      200
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.poppy_red",
+     "name": "poppy red",
+     "hex": "#e14d28",
+     "oklch": [
+      0.62,
+      0.19,
+      35
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.apricot",
+     "name": "apricot",
+     "hex": "#eeae7b",
+     "oklch": [
+      0.8,
+      0.1,
+      60
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "true_spring.clear_warm_blue",
+     "name": "clear warm blue",
+     "hex": "#1292c0",
+     "oklch": [
+      0.62,
+      0.12,
+      230
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_spring.warm_violet",
+     "name": "warm violet",
+     "hex": "#8b66b3",
+     "oklch": [
+      0.58,
+      0.12,
+      305
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bright_spring",
+   "name": "Bright Spring",
+   "description": "Clear and vivid, warm-leaning, with crisp light and dark anchors.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "bright_spring.ivory",
+     "name": "ivory",
+     "hex": "#f6f2e3",
+     "oklch": [
+      0.96,
+      0.02,
+      95
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "bright_spring.light_warm_grey",
+     "name": "light warm grey",
+     "hex": "#bcb7ad",
+     "oklch": [
+      0.78,
+      0.015,
+      80
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.light_camel",
+     "name": "light camel",
+     "hex": "#cba77d",
+     "oklch": [
+      0.75,
+      0.07,
+      70
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.bright_navy",
+     "name": "bright navy",
+     "hex": "#18386e",
+     "oklch": [
+      0.35,
+      0.1,
+      260
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "bright_spring.coral_red",
+     "name": "coral red",
+     "hex": "#e9523f",
+     "oklch": [
+      0.64,
+      0.19,
+      30
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.coral_pink",
+     "name": "coral pink",
+     "hex": "#f16f7e",
+     "oklch": [
+      0.7,
+      0.16,
+      15
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.turquoise",
+     "name": "turquoise",
+     "hex": "#03c3c3",
+     "oklch": [
+      0.74,
+      0.126,
+      195
+     ],
+     "requested_chroma": 0.13,
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.kelly_green",
+     "name": "kelly green",
+     "hex": "#35ad44",
+     "oklch": [
+      0.66,
+      0.18,
+      145
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.sunflower",
+     "name": "sunflower",
+     "hex": "#f5d240",
+     "oklch": [
+      0.87,
+      0.16,
+      95
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "bright_spring.clear_blue",
+     "name": "clear blue",
+     "hex": "#0d7dd4",
+     "oklch": [
+      0.58,
+      0.16,
+      250
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.tangerine",
+     "name": "tangerine",
+     "hex": "#f68622",
+     "oklch": [
+      0.73,
+      0.17,
+      55
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_spring.violet",
+     "name": "violet",
+     "hex": "#9065d0",
+     "oklch": [
+      0.6,
+      0.16,
+      300
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "light_summer",
+   "name": "Light Summer",
+   "description": "Light, cool-leaning, gentle; airy rather than icy.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "light_summer.soft_white",
+     "name": "soft white",
+     "hex": "#eef2f7",
+     "oklch": [
+      0.96,
+      0.008,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.light_cool_grey",
+     "name": "light cool grey",
+     "hex": "#b8bec5",
+     "oklch": [
+      0.8,
+      0.012,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.rose_beige",
+     "name": "rose beige",
+     "hex": "#baa5a4",
+     "oklch": [
+      0.74,
+      0.025,
+      20
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_summer.slate_navy",
+     "name": "slate navy",
+     "hex": "#465f7f",
+     "oklch": [
+      0.48,
+      0.06,
+      255
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_summer.powder_blue",
+     "name": "powder blue",
+     "hex": "#aed0e8",
+     "oklch": [
+      0.84,
+      0.05,
+      240
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.periwinkle",
+     "name": "periwinkle",
+     "hex": "#94a0dd",
+     "oklch": [
+      0.72,
+      0.09,
+      275
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "light_summer.light_rose",
+     "name": "light rose",
+     "hex": "#eab2c6",
+     "oklch": [
+      0.82,
+      0.07,
+      355
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.lavender",
+     "name": "lavender",
+     "hex": "#c6b5dd",
+     "oklch": [
+      0.8,
+      0.06,
+      305
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.mint",
+     "name": "mint",
+     "hex": "#b0e1ca",
+     "oklch": [
+      0.87,
+      0.06,
+      165
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.soft_aqua",
+     "name": "soft aqua",
+     "hex": "#90cacd",
+     "oklch": [
+      0.8,
+      0.06,
+      200
+     ],
+     "tags": [
+      "light"
+     ]
+    },
+    {
+     "id": "light_summer.cool_watermelon",
+     "name": "cool watermelon",
+     "hex": "#d46e80",
+     "oklch": [
+      0.66,
+      0.13,
+      10
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "light_summer.lemon_ice",
+     "name": "lemon ice",
+     "hex": "#eeebb5",
+     "oklch": [
+      0.93,
+      0.07,
+      105
+     ],
+     "tags": [
+      "explore",
+      "light"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "true_summer",
+   "name": "True Summer",
+   "description": "Cool, medium value, softly colored.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "true_summer.soft_white",
+     "name": "soft white",
+     "hex": "#e7ebf2",
+     "oklch": [
+      0.94,
+      0.01,
+      260
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "true_summer.blue_grey",
+     "name": "blue-grey",
+     "hex": "#7f8e9e",
+     "oklch": [
+      0.64,
+      0.03,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.charcoal_blue",
+     "name": "charcoal blue",
+     "hex": "#333e4d",
+     "oklch": [
+      0.36,
+      0.03,
+      255
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_summer.rose_brown",
+     "name": "rose-brown",
+     "hex": "#795a5a",
+     "oklch": [
+      0.5,
+      0.04,
+      20
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.greyed_navy",
+     "name": "greyed navy",
+     "hex": "#31486d",
+     "oklch": [
+      0.4,
+      0.07,
+      260
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "true_summer.cornflower",
+     "name": "cornflower",
+     "hex": "#6b8acf",
+     "oklch": [
+      0.64,
+      0.11,
+      265
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.rose_pink",
+     "name": "rose pink",
+     "hex": "#c97e9b",
+     "oklch": [
+      0.68,
+      0.1,
+      355
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.raspberry",
+     "name": "raspberry",
+     "hex": "#a63f66",
+     "oklch": [
+      0.52,
+      0.14,
+      0
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.blue_spruce",
+     "name": "blue spruce",
+     "hex": "#4b8e86",
+     "oklch": [
+      0.6,
+      0.07,
+      185
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.sea_blue",
+     "name": "sea blue",
+     "hex": "#357b95",
+     "oklch": [
+      0.55,
+      0.08,
+      225
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.soft_plum",
+     "name": "soft plum",
+     "hex": "#71476d",
+     "oklch": [
+      0.46,
+      0.08,
+      330
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_summer.lavender_grey",
+     "name": "lavender grey",
+     "hex": "#a099bb",
+     "oklch": [
+      0.7,
+      0.05,
+      295
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "soft_summer",
+   "name": "Soft Summer",
+   "description": "Muted, cool-leaning, medium depth; greyed and blended.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "soft_summer.oyster",
+     "name": "oyster",
+     "hex": "#e2ded5",
+     "oklch": [
+      0.9,
+      0.012,
+      85
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "soft_summer.pewter",
+     "name": "pewter",
+     "hex": "#81878d",
+     "oklch": [
+      0.62,
+      0.012,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.charcoal",
+     "name": "charcoal",
+     "hex": "#363b41",
+     "oklch": [
+      0.35,
+      0.012,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "soft_summer.cool_taupe",
+     "name": "cool taupe",
+     "hex": "#87766d",
+     "oklch": [
+      0.58,
+      0.025,
+      50
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.slate_blue",
+     "name": "slate blue",
+     "hex": "#647d97",
+     "oklch": [
+      0.58,
+      0.05,
+      250
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.dusty_rose",
+     "name": "dusty rose",
+     "hex": "#b3838d",
+     "oklch": [
+      0.66,
+      0.06,
+      5
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.mauve",
+     "name": "mauve",
+     "hex": "#896885",
+     "oklch": [
+      0.56,
+      0.06,
+      330
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.grey_sage",
+     "name": "grey sage",
+     "hex": "#819985",
+     "oklch": [
+      0.66,
+      0.04,
+      150
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.dusty_teal",
+     "name": "dusty teal",
+     "hex": "#4d7b7d",
+     "oklch": [
+      0.55,
+      0.05,
+      200
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.denim",
+     "name": "denim",
+     "hex": "#4d6b91",
+     "oklch": [
+      0.52,
+      0.07,
+      255
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_summer.berry_plum",
+     "name": "berry plum",
+     "hex": "#73455b",
+     "oklch": [
+      0.45,
+      0.07,
+      350
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "soft_autumn",
+   "name": "Soft Autumn",
+   "description": "Muted, warm-leaning, medium depth; earthy and blended.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "soft_autumn.oatmeal",
+     "name": "oatmeal",
+     "hex": "#e9e0cf",
+     "oklch": [
+      0.91,
+      0.025,
+      85
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "soft_autumn.mushroom",
+     "name": "mushroom",
+     "hex": "#918377",
+     "oklch": [
+      0.62,
+      0.025,
+      65
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.deep_khaki_brown",
+     "name": "deep khaki brown",
+     "hex": "#453c2b",
+     "oklch": [
+      0.36,
+      0.03,
+      80
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "soft_autumn.camel",
+     "name": "camel",
+     "hex": "#b79876",
+     "oklch": [
+      0.7,
+      0.06,
+      70
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.sage",
+     "name": "sage",
+     "hex": "#8e9f7f",
+     "oklch": [
+      0.68,
+      0.05,
+      130
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.olive",
+     "name": "olive",
+     "hex": "#6d734a",
+     "oklch": [
+      0.54,
+      0.06,
+      115
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.light_salmon",
+     "name": "light salmon",
+     "hex": "#deaa93",
+     "oklch": [
+      0.78,
+      0.07,
+      45
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.soft_rust",
+     "name": "soft rust",
+     "hex": "#a06347",
+     "oklch": [
+      0.56,
+      0.09,
+      45
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.muted_teal",
+     "name": "muted teal",
+     "hex": "#4b7878",
+     "oklch": [
+      0.54,
+      0.05,
+      195
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.rosewood",
+     "name": "rosewood",
+     "hex": "#885b5e",
+     "oklch": [
+      0.52,
+      0.06,
+      15
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.soft_gold",
+     "name": "soft gold",
+     "hex": "#bea96f",
+     "oklch": [
+      0.74,
+      0.08,
+      90
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    },
+    {
+     "id": "soft_autumn.dusky_blue",
+     "name": "dusky blue",
+     "hex": "#435a73",
+     "oklch": [
+      0.46,
+      0.05,
+      250
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "true_autumn",
+   "name": "True Autumn",
+   "description": "Warm, rich, medium-deep; spice and earth.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "true_autumn.cream",
+     "name": "cream",
+     "hex": "#f1e7ce",
+     "oklch": [
+      0.93,
+      0.035,
+      90
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "true_autumn.camel",
+     "name": "camel",
+     "hex": "#b49168",
+     "oklch": [
+      0.68,
+      0.07,
+      70
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.chocolate",
+     "name": "chocolate",
+     "hex": "#523525",
+     "oklch": [
+      0.36,
+      0.05,
+      50
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_autumn.olive",
+     "name": "olive",
+     "hex": "#626930",
+     "oklch": [
+      0.5,
+      0.08,
+      115
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.rust",
+     "name": "rust",
+     "hex": "#ae532d",
+     "oklch": [
+      0.55,
+      0.13,
+      42
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.pumpkin",
+     "name": "pumpkin",
+     "hex": "#d67523",
+     "oklch": [
+      0.66,
+      0.15,
+      55
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.mustard",
+     "name": "mustard",
+     "hex": "#c2a140",
+     "oklch": [
+      0.72,
+      0.12,
+      90
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.fern",
+     "name": "fern",
+     "hex": "#6c9455",
+     "oklch": [
+      0.62,
+      0.1,
+      135
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.teal",
+     "name": "teal",
+     "hex": "#147175",
+     "oklch": [
+      0.5,
+      0.08,
+      200
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.tomato_red",
+     "name": "tomato red",
+     "hex": "#cb4930",
+     "oklch": [
+      0.58,
+      0.17,
+      33
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_autumn.petrol_blue",
+     "name": "petrol blue",
+     "hex": "#115667",
+     "oklch": [
+      0.42,
+      0.07,
+      220
+     ],
+     "tags": [
+      "explore",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_autumn.warm_salmon",
+     "name": "warm salmon",
+     "hex": "#da8f74",
+     "oklch": [
+      0.72,
+      0.1,
+      40
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dark_autumn",
+   "name": "Dark Autumn",
+   "description": "Deep, warm-leaning, rich; darker than True Autumn.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "dark_autumn.cream",
+     "name": "cream",
+     "hex": "#eee4cf",
+     "oklch": [
+      0.92,
+      0.03,
+      85
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "dark_autumn.bronze",
+     "name": "bronze",
+     "hex": "#956a40",
+     "oklch": [
+      0.56,
+      0.08,
+      65
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_autumn.dark_chocolate",
+     "name": "dark chocolate",
+     "hex": "#3e281b",
+     "oklch": [
+      0.3,
+      0.04,
+      50
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.warm_black_brown",
+     "name": "warm black-brown",
+     "hex": "#201914",
+     "oklch": [
+      0.22,
+      0.015,
+      60
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.dark_olive",
+     "name": "dark olive",
+     "hex": "#555625",
+     "oklch": [
+      0.44,
+      0.07,
+      110
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.forest_green",
+     "name": "forest green",
+     "hex": "#0e492a",
+     "oklch": [
+      0.36,
+      0.08,
+      155
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.deep_teal",
+     "name": "deep teal",
+     "hex": "#005256",
+     "oklch": [
+      0.4,
+      0.068,
+      200
+     ],
+     "requested_chroma": 0.07,
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.oxblood",
+     "name": "oxblood",
+     "hex": "#722423",
+     "oklch": [
+      0.38,
+      0.11,
+      25
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.burnt_orange",
+     "name": "burnt orange",
+     "hex": "#bc5a29",
+     "oklch": [
+      0.58,
+      0.14,
+      45
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_autumn.old_gold",
+     "name": "old gold",
+     "hex": "#ad8522",
+     "oklch": [
+      0.64,
+      0.12,
+      85
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_autumn.aubergine",
+     "name": "aubergine",
+     "hex": "#4c2a49",
+     "oklch": [
+      0.34,
+      0.07,
+      330
+     ],
+     "tags": [
+      "explore",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_autumn.warm_navy",
+     "name": "warm navy",
+     "hex": "#1d395b",
+     "oklch": [
+      0.34,
+      0.07,
+      255
+     ],
+     "tags": [
+      "explore",
+      "deep"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dark_winter",
+   "name": "Dark Winter",
+   "description": "Deep, cool-leaning, fairly clear; jewel tones on dark neutrals.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "dark_winter.soft_white",
+     "name": "soft white",
+     "hex": "#ebeff4",
+     "oklch": [
+      0.95,
+      0.008,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "dark_winter.steel_grey",
+     "name": "steel grey",
+     "hex": "#747b83",
+     "oklch": [
+      0.58,
+      0.015,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_winter.charcoal",
+     "name": "charcoal",
+     "hex": "#303338",
+     "oklch": [
+      0.32,
+      0.01,
+      260
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.near_black",
+     "name": "near-black",
+     "hex": "#1a1a1d",
+     "oklch": [
+      0.22,
+      0.005,
+      270
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.deep_navy",
+     "name": "deep navy",
+     "hex": "#1a2b56",
+     "oklch": [
+      0.3,
+      0.08,
+      265
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.burgundy",
+     "name": "burgundy",
+     "hex": "#6d172e",
+     "oklch": [
+      0.36,
+      0.12,
+      10
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.blue_red",
+     "name": "blue-red",
+     "hex": "#ba293b",
+     "oklch": [
+      0.52,
+      0.18,
+      20
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_winter.emerald",
+     "name": "emerald",
+     "hex": "#007654",
+     "oklch": [
+      0.5,
+      0.105,
+      165
+     ],
+     "requested_chroma": 0.12,
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "dark_winter.deep_teal",
+     "name": "deep teal",
+     "hex": "#02585f",
+     "oklch": [
+      0.42,
+      0.071,
+      205
+     ],
+     "requested_chroma": 0.08,
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.sapphire",
+     "name": "sapphire",
+     "hex": "#23459d",
+     "oklch": [
+      0.42,
+      0.15,
+      265
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.dark_plum",
+     "name": "dark plum",
+     "hex": "#51244e",
+     "oklch": [
+      0.34,
+      0.09,
+      330
+     ],
+     "tags": [
+      "explore",
+      "deep"
+     ]
+    },
+    {
+     "id": "dark_winter.berry",
+     "name": "berry",
+     "hex": "#9b2b6a",
+     "oklch": [
+      0.48,
+      0.16,
+      350
+     ],
+     "tags": [
+      "explore",
+      "mid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "true_winter",
+   "name": "True Winter",
+   "description": "Cool, clear, high contrast; pure white and black anchors.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "true_winter.pure_white",
+     "name": "pure white",
+     "hex": "#fcfcfc",
+     "oklch": [
+      0.99,
+      0,
+      0
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "true_winter.black",
+     "name": "black",
+     "hex": "#121212",
+     "oklch": [
+      0.18,
+      0,
+      0
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_winter.cool_grey",
+     "name": "cool grey",
+     "hex": "#7d8086",
+     "oklch": [
+      0.6,
+      0.01,
+      260
+     ],
+     "tags": [
+      "neutral",
+      "mid"
+     ]
+    },
+    {
+     "id": "true_winter.navy",
+     "name": "navy",
+     "hex": "#192f65",
+     "oklch": [
+      0.32,
+      0.1,
+      265
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "true_winter.true_red",
+     "name": "true red",
+     "hex": "#ba0329",
+     "oklch": [
+      0.5,
+      0.2,
+      22
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_winter.royal_blue",
+     "name": "royal blue",
+     "hex": "#244ecc",
+     "oklch": [
+      0.48,
+      0.2,
+      265
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_winter.pine_emerald",
+     "name": "pine emerald",
+     "hex": "#036f4f",
+     "oklch": [
+      0.48,
+      0.1,
+      165
+     ],
+     "requested_chroma": 0.12,
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_winter.magenta",
+     "name": "magenta",
+     "hex": "#cc2997",
+     "oklch": [
+      0.58,
+      0.22,
+      345
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "true_winter.deep_purple",
+     "name": "deep purple",
+     "hex": "#5a2d83",
+     "oklch": [
+      0.4,
+      0.14,
+      305
+     ],
+     "tags": [
+      "deep"
+     ]
+    },
+    {
+     "id": "true_winter.icy_pink",
+     "name": "icy pink",
+     "hex": "#f9e0eb",
+     "oklch": [
+      0.93,
+      0.03,
+      350
+     ],
+     "tags": [
+      "explore",
+      "light"
+     ]
+    },
+    {
+     "id": "true_winter.icy_blue",
+     "name": "icy blue",
+     "hex": "#d7ebfa",
+     "oklch": [
+      0.93,
+      0.03,
+      240
+     ],
+     "tags": [
+      "explore",
+      "light"
+     ]
+    },
+    {
+     "id": "true_winter.burgundy",
+     "name": "burgundy",
+     "hex": "#761839",
+     "oklch": [
+      0.38,
+      0.13,
+      5
+     ],
+     "tags": [
+      "explore",
+      "deep"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bright_winter",
+   "name": "Bright Winter",
+   "description": "Clear and vivid, cool-leaning; brightest colors on black and white.",
+   "version": "0.1.0",
+   "swatches": [
+    {
+     "id": "bright_winter.white",
+     "name": "white",
+     "hex": "#f6f9fc",
+     "oklch": [
+      0.98,
+      0.005,
+      250
+     ],
+     "tags": [
+      "neutral",
+      "light"
+     ]
+    },
+    {
+     "id": "bright_winter.black",
+     "name": "black",
+     "hex": "#161616",
+     "oklch": [
+      0.2,
+      0,
+      0
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "bright_winter.charcoal",
+     "name": "charcoal",
+     "hex": "#3a3d42",
+     "oklch": [
+      0.36,
+      0.01,
+      260
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "bright_winter.navy",
+     "name": "navy",
+     "hex": "#14295f",
+     "oklch": [
+      0.3,
+      0.1,
+      265
+     ],
+     "tags": [
+      "neutral",
+      "deep"
+     ]
+    },
+    {
+     "id": "bright_winter.hot_pink",
+     "name": "hot pink",
+     "hex": "#df3798",
+     "oklch": [
+      0.62,
+      0.22,
+      350
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.cobalt",
+     "name": "cobalt",
+     "hex": "#1256d8",
+     "oklch": [
+      0.5,
+      0.21,
+      262
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.cherry",
+     "name": "cherry",
+     "hex": "#ed324b",
+     "oklch": [
+      0.62,
+      0.22,
+      20
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.bright_emerald",
+     "name": "bright emerald",
+     "hex": "#019f68",
+     "oklch": [
+      0.62,
+      0.14,
+      160
+     ],
+     "requested_chroma": 0.16,
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.electric_turquoise",
+     "name": "electric turquoise",
+     "hex": "#0ac6c7",
+     "oklch": [
+      0.75,
+      0.127,
+      195
+     ],
+     "requested_chroma": 0.13,
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.violet",
+     "name": "violet",
+     "hex": "#7c44c3",
+     "oklch": [
+      0.52,
+      0.19,
+      300
+     ],
+     "tags": [
+      "mid"
+     ]
+    },
+    {
+     "id": "bright_winter.icy_mint",
+     "name": "icy mint",
+     "hex": "#cff1e4",
+     "oklch": [
+      0.93,
+      0.04,
+      170
+     ],
+     "tags": [
+      "explore",
+      "light"
+     ]
+    },
+    {
+     "id": "bright_winter.lemon",
+     "name": "lemon",
+     "hex": "#f5ea5c",
+     "oklch": [
+      0.92,
+      0.16,
+      105
+     ],
+     "tags": [
+      "explore",
+      "light"
+     ]
+    }
+   ]
+  }
+ ]
+}

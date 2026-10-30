@@ -1,0 +1,32 @@
+{
+ "_note": "Defaults for a new shopper session. The shopper's brief sets occasion, budget and constraints; nothing here is about a person.",
+ "occasion": "",
+ "budgetNew": null,
+ "budgetMode": "firm",
+ "constraints": [],
+ "owned": [],
+ "outfit_rule": {
+  "story_slots": [
+   "bottom",
+   "shoes"
+  ],
+  "min_on_palette": 1,
+  "neutral_ok_slots": [
+   "top",
+   "bottom",
+   "dress",
+   "shoes",
+   "necklace"
+  ],
+  "_note": "at least one of the story slots must be on-palette; the others may be neutral",
+  "vary_across_outfits": [
+   "bottom",
+   "shoes",
+   "necklace"
+  ]
+ },
+ "saved_sizes": {},
+ "preferred_items": [],
+ "palette_required": false,
+ "rank_saved_sizes": false
+}

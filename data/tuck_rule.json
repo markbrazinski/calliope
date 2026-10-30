@@ -1,0 +1,96 @@
+{
+ "_source": "2026-10-02 spike styling review (artifacts/spikes/2026-10-02-cc, docs/cc-subject-run \u00a712); render order is the only YouCam control: the last layer sits on top. Ported 2026-10-16.",
+ "rules": [
+  {
+   "if": {
+    "trouser_rise": [
+     "high"
+    ],
+    "any": {
+     "volume": [
+      "high"
+     ],
+     "length": [
+      "hip",
+      "tunic"
+     ]
+    }
+   },
+   "then": "tucked"
+  },
+  {
+   "if": {
+    "occasion_formality": [
+     "smart",
+     "dressy"
+    ],
+    "fabric_weight": [
+     "fluid",
+     "light"
+    ]
+   },
+   "then": "tucked"
+  },
+  {
+   "if": {
+    "length": [
+     "cropped",
+     "waist"
+    ]
+   },
+   "then": "untucked"
+  },
+  {
+   "if": {
+    "fabric_weight": [
+     "heavy",
+     "stiff"
+    ],
+    "occasion_formality": [
+     "casual"
+    ]
+   },
+   "then": "untucked"
+  },
+  {
+   "if": {
+    "trouser_rise": [
+     "low",
+     "mid"
+    ],
+    "volume": [
+     "fitted"
+    ]
+   },
+   "then": "untucked"
+  }
+ ],
+ "default": "tucked",
+ "untucked_order": [
+  "bottom",
+  "top",
+  "shoes",
+  "necklace"
+ ],
+ "tucked_order": [
+  "top",
+  "bottom",
+  "shoes",
+  "necklace"
+ ],
+ "facts": {
+  "length": "top: cropped|waist|hip|tunic (Nova reads an owned top; unknown for catalog tops)",
+  "volume": "top: fitted|regular|high",
+  "fabric_weight": "top: light|fluid|medium|heavy|stiff",
+  "hem": "top: straight|curved|shirttail",
+  "trouser_rise": "catalog attribute rise: low|mid|high",
+  "occasion_formality": "from the brief: casual|smart|dressy"
+ },
+ "edit": {
+  "why": "YouCam's try-on has no tuck control and returns the same picture for the same input, so for some photos a tucked look always comes back untucked; re-encoded retries gave 0 tucked in 6 (2026-10-16, checked by eye). YouCam's own image editor tucks it from an instruction, on any photo, with no mask. Measured 2026-10-16: 5 of 5 tucked on the filmed photo (two outfits, one repeat gives different pixels but is still tucked); an already-tucked studio-model picture came back essentially unchanged; 1 unit each. The edit regenerates the picture, so face and garment detail can drift slightly.",
+  "model": "youcam-image-v2",
+  "prompt": "Tuck the top into the waistband of the {bottom} at the natural waist, so the waistband shows and the top drapes slightly over it. Change nothing else: same person, same face, same hair, same pose and hands, same top, same {bottom}, same shoes, same background and lighting.",
+  "negative_prompt": "different face, different person, changed clothing colour, extra fingers, distorted hands, blurry",
+  "max_side": 2016
+ }
+}

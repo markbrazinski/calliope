@@ -1,0 +1,231 @@
+{
+ "_note": "Attribute-level change-request fixtures (2026-10-05). 'expect' is checked against the rules fallback. 'model_stub' is a canned model tool output (no model call) checked through validate(); bad stubs must be corrected or rejected, never trusted.",
+ "cases": [
+  {
+   "text": "Can I try a lower rise?",
+   "expect": [
+    [
+     "bottom",
+     "rise",
+     "lt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "these sit too high, something that sits lower",
+   "expect": [
+    [
+     "bottom",
+     "rise",
+     "lt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "low-rise jeans please",
+   "expect": [
+    [
+     "bottom",
+     "pants_type",
+     "eq",
+     "jeans"
+    ],
+    [
+     "bottom",
+     "rise",
+     "eq",
+     "low"
+    ]
+   ]
+  },
+  {
+   "text": "mid-rise trousers",
+   "expect": [
+    [
+     "bottom",
+     "rise",
+     "eq",
+     "mid"
+    ]
+   ]
+  },
+  {
+   "text": "something slimmer",
+   "expect": [
+    [
+     "bottom",
+     "leg_cut",
+     "lt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "narrower leg",
+   "expect": [
+    [
+     "bottom",
+     "leg_cut",
+     "lt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "make them tighter",
+   "expect_clarify": "cut_or_size"
+  },
+  {
+   "text": "I want a different neckline with longer sleeves",
+   "expect": [
+    [
+     "top",
+     "neckline",
+     "neq",
+     null
+    ],
+    [
+     "top",
+     "sleeve_length",
+     "gt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "a lower neckline",
+   "expect_clarify": "which_value"
+  },
+  {
+   "text": "deeper neckline on the top",
+   "expect_clarify": "which_value"
+  },
+  {
+   "text": "a v-neck instead",
+   "expect": [
+    [
+     "top",
+     "neckline",
+     "eq",
+     "v_neck"
+    ]
+   ]
+  },
+  {
+   "text": "long sleeves",
+   "expect": [
+    [
+     "top",
+     "sleeve_length",
+     "eq",
+     "long"
+    ]
+   ]
+  },
+  {
+   "text": "darker trousers",
+   "why": "2026-10-05: darker/lighter is a request condition over the catalog's measured colours (was the separate T3 colour path)",
+   "expect": [
+    [
+     "bottom",
+     "lightness",
+     "lt",
+     null
+    ]
+   ]
+  },
+  {
+   "text": "lower neckline",
+   "model_stub": {
+    "status": "supported",
+    "requested": [
+     {
+      "slot": "top",
+      "attribute": "neckline",
+      "op": "lt",
+      "sourcePhrase": "lower neckline"
+     }
+    ]
+   },
+   "expect_valid": "needs_clarification",
+   "why": "model invented an order for neckline"
+  },
+  {
+   "text": "lower rise",
+   "model_stub": {
+    "status": "supported",
+    "requested": [
+     {
+      "slot": "top",
+      "attribute": "rise",
+      "op": "lt",
+      "sourcePhrase": "lower rise"
+     }
+    ]
+   },
+   "expect_valid": "supported",
+   "expect_slot": "bottom",
+   "why": "wrong slot corrected from the vocabulary"
+  },
+  {
+   "text": "something nicer",
+   "model_stub": {
+    "status": "supported",
+    "requested": [
+     {
+      "slot": "bottom",
+      "attribute": "rise",
+      "op": "eq",
+      "value": "low",
+      "sourcePhrase": "low rise"
+     }
+    ]
+   },
+   "expect_valid": "unsupported",
+   "why": "sourcePhrase not in the shopper's words: dropped"
+  },
+  {
+   "text": "skinnier please",
+   "model_stub": {
+    "status": "supported",
+    "requested": [
+     {
+      "slot": "bottom",
+      "attribute": "leg_cut",
+      "op": "eq",
+      "value": "ultra_skinny",
+      "sourcePhrase": "skinnier"
+     }
+    ]
+   },
+   "expect_valid": "unsupported",
+   "why": "value outside the vocabulary"
+  },
+  {
+   "text": "x",
+   "model_stub": "not json at all",
+   "expect_valid": "unsupported",
+   "why": "malformed"
+  },
+  {
+   "text": "Show me darker trousers with a narrower leg. Keep everything else.",
+   "expect": [
+    [
+     "bottom",
+     "lightness",
+     "lt",
+     null
+    ],
+    [
+     "bottom",
+     "leg_cut",
+     "lt",
+     null
+    ]
+   ],
+   "why": "compound: both conditions, never only one"
+  }
+ ]
+}

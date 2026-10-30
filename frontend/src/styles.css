@@ -1,0 +1,18 @@
+/* Calliope · Tailored v1.0 tokens (handoff assets/tokens.css; fonts are self-hosted in fonts.css instead of the Google import). */
+:root {
+  --c-bg: #efe8db; --c-surface: #fcf9f2; --c-text: #151514; --c-text-2: #55534d; --c-border: #837d73; --c-hairline: #ddd4c4;
+  --c-chip-line: #cdc4b4; --c-chip: #f5f0e6; --c-input: #fffdf8; --c-primary: #151514; --c-on-primary: #fcf9f2;
+  --c-accent: #0d6b66; --c-success: #26683c; --c-warning: #8a5800; --c-error: #b42318; --c-deco-teal-light: #6fd3c8;
+  --c-scrim: rgba(21,21,20,.38);
+  --f-ui: 'Schibsted Grotesk', sans-serif; --f-wordmark: 'DM Serif Display', serif; --f-disclosure: 'IBM Plex Mono', monospace;
+}
+/* Base rules from the prototype (Calliope Prototype.dc.html <helmet>). */
+body { margin: 0; background: #efe8db; }
+* { box-sizing: border-box; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button:disabled { cursor: not-allowed; }
+a { color: #0d6b66; }
+a:hover { color: #151514; }
+:focus-visible { outline: 2px solid #0d6b66; outline-offset: 2px; }
+button:not(:disabled):active { transform: scale(0.97); }       /* every tap shows, also on a screen recording */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

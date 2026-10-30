@@ -1,0 +1,63 @@
+{
+ "_note": "Occasions the start step recognises (frontend/src/Start.jsx extract()). 'formality' is the dress level the occasion implies for tops, trousers, dresses and shoes when the shopper hasn't said how dressy; null means the occasion doesn't imply one. Any other occasion text is kept for display and reported as not used for choosing pieces.",
+ "occasions": {
+  "anniversary": "smart",
+  "date night": "smart",
+  "wedding": "smart",
+  "interview": "smart",
+  "graduation": "smart",
+  "work": "smart",
+  "birthday": null,
+  "gala": "dressy",
+  "cocktail": "smart",
+  "conference": "smart",
+  "meeting": "smart",
+  "presentation": "smart",
+  "office": "smart",
+  "funeral": "smart",
+  "christening": "smart",
+  "theater": "smart",
+  "theatre": "smart",
+  "dinner": null,
+  "lunch": null,
+  "brunch": null,
+  "party": null,
+  "concert": null,
+  "night out": null,
+  "holiday": null,
+  "vacation": null,
+  "trip": null,
+  "picnic": null,
+  "date": "smart"
+ },
+ "dress": {
+  "Relaxed": null,
+  "Smart evening": "smart",
+  "Formal": "dressy"
+ },
+ "levels": {
+  "smart": {
+   "exclude": [
+    "casual"
+   ],
+   "slots": [
+    "top",
+    "bottom",
+    "dress",
+    "shoes"
+   ]
+  },
+  "dressy": {
+   "exclude": [
+    "casual",
+    "smart"
+   ],
+   "slots": [
+    "top",
+    "bottom",
+    "dress",
+    "shoes"
+   ]
+  }
+ }
+}

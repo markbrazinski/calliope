@@ -1,0 +1,12 @@
+{
+ "_note": "Neutral colour families as OKLCH ranges (data). A colour matching any family is neutral for every palette.",
+ "families": [
+  {"name": "black", "C_max": 0.03, "L_max": 0.30},
+  {"name": "grey", "C_max": 0.03, "L_min": 0.30, "L_max": 0.90},
+  {"name": "white", "C_max": 0.03, "L_min": 0.90},
+  {"name": "brown_tan", "h_min": 30, "h_max": 95, "C_max": 0.12, "L_max": 0.85},
+  {"name": "navy", "h_min": 230, "h_max": 285, "C_max": 0.12, "L_max": 0.40},
+  {"name": "cream", "h_min": 60, "h_max": 110, "C_max": 0.06, "L_min": 0.85}
+ ],
+ "palette_fit_max": 0.10
+}

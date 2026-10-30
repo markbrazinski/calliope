@@ -1,0 +1,29 @@
+{
+ "_note": "Which measurement to trust per slot (from spike 2026-10-02 \u00a74); how to resolve disputes.",
+ "color_source": {
+  "bottom": "pixels",
+  "top": "pixels",
+  "shoes": "nova",
+  "necklace": "nova"
+ },
+ "heel_keywords_heeled": "\\bheels?\\b|wedge|stiletto|pump|mid-heel|high heel|block heel|\\bclogs?\\b",
+ "dispute": "if Nova says flat/low_platform but the title names a heel type, heel_height = unknown",
+ "_dispute_note": "clog added 2026-10-02 after a visual review found a block-heel clog classified low_platform",
+ "slot_exclude": {
+  "bottom": "\\bsets?\\b|outerwear|two[- ]piece|\\bjumpsuit\\b|\\bromper\\b"
+ },
+ "_slot_exclude_note": "sets and outerwear are not trousers (found 2026-10-02: \"Zip Up Long Sleeve Outerwear and Pants Set\" in the trousers slot)",
+ "rise": {
+  "high": "high[- ]?(waist|rise)|\\bhigh\\b",
+  "mid": "mid[- ]?rise",
+  "low": "low[- ]?rise"
+ },
+ "shape": {
+  "wide_leg": "wide[- ]?leg|palazzo",
+  "flare": "flare|bootcut|boot[- ]cut",
+  "slim": "skinny|slim|cigarette",
+  "straight": "straight",
+  "jogger": "jogger"
+ },
+ "_shape_note": "trouser shape from title (data); used by the \"trouser shape\" carry reason (2026-10-05)"
+}
